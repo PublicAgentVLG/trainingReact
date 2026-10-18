@@ -1,0 +1,8 @@
+.layout { display: flex; min-height: 100vh; }
+.sidebar { width: 260px; padding: 1rem; border-right: 1px solid rgba(127,127,127,.25); }
+.brand { font-size: 1.1rem; margin: 0 0 1rem; }
+.nav { display: flex; flex-direction: column; gap: .25rem; }
+.nav-link { padding: .5rem .75rem; border-radius: 6px; text-decoration: none; color: inherit; }
+.nav-link:hover { background: rgba(127,127,127,.12); }
+.nav-link--active { background: rgba(80,130,255,.18); font-weight: 600; }
+.content { flex: 1; padding: 1.5rem 2rem; max-width: 900px; }

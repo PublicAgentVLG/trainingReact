@@ -1,49 +1,33 @@
-import { useEffect, useState } from 'react'
-import type { Order } from './shared/types'
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Placeholder from './components/Placeholder'
+import HomePage from './pages/HomePage'
+import NotFoundPage from './pages/NotFoundPage'
+import ReduxOrdersPage from './features/redux/pages/OrdersPage'
+import ReduxOrderItemsPage from './features/redux/pages/OrderItemsPage'
 
-// ВРЕМЕННЫЙ компонент Этапа 0: только smoke-тест связи с бэкендом.
-// На Этапе 1 (React Router 6) его заменит layout с меню-навигацией.
-function App() {
-  const [status, setStatus] = useState<'loading' | 'ok' | 'error'>('loading')
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    fetch('/api/orders')
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.json() as Promise<Order[]>
-      })
-      .then((orders) => {
-        setCount(orders.length)
-        setStatus('ok')
-      })
-      .catch(() => setStatus('error'))
-  }, [])
-
+export default function App() {
   return (
-    <main className="app">
-      <h1>trainingReact — Этап 0 ✅</h1>
-      <p>Шаблон поднят. Ниже — проверка связи фронта с бэкендом:</p>
+    <Routes>
+      {/* Родительский маршрут с общим layout. Дети рендерятся в его <Outlet/> */}
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="styling" element={<Placeholder title="Этап 2 · CSS Modules / PostCSS" />} />
+        <Route path="hooks" element={<Placeholder title="Этап 3 · Хуки" />} />
 
-      {status === 'loading' && <p>⏳ Проверяю бэкенд…</p>}
-      {status === 'ok' && (
-        <p>
-          ✅ Бэкенд на связи. Заказов в базе: <b>{count}</b>
-        </p>
-      )}
-      {status === 'error' && (
-        <p>
-          ❌ Нет связи с бэкендом. Запущен ли он? Запусти из корня: <code>npm run dev</code>
-        </p>
-      )}
+        {/* Этап 4 — Redux + RTK Query */}
+        <Route path="redux/orders" element={<ReduxOrdersPage />} />
+        <Route path="redux/orders/:orderId" element={<ReduxOrderItemsPage />} />
 
-      <hr />
-      <p className="hint">
-        Дальше — Этап 1 (React Router 6): этот файл заменим на layout с меню.
-      </p>
-    </main>
+        {/* Этап 5 — Zustand + TanStack Query */}
+        <Route path="zustand/orders" element={<Placeholder title="Этап 5 · Zustand · Заказы" />} />
+        <Route path="zustand/orders/:orderId" element={<Placeholder title="Этап 5 · Zustand · Позиции" />} />
+
+        {/* Catch-all: любой несуществующий путь */}
+        <Route path="*" element={<NotFoundPage />} />
+
+        <Route path="about" element={<Placeholder title="About" />} />
+      </Route>
+    </Routes>
   )
 }
-
-export default App
