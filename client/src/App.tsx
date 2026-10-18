@@ -23,10 +23,10 @@ export default function App() {
         <Route path="zustand/orders" element={<Placeholder title="Этап 5 · Zustand · Заказы" />} />
         <Route path="zustand/orders/:orderId" element={<Placeholder title="Этап 5 · Zustand · Позиции" />} />
 
+        <Route path="about" element={<Placeholder title="About" />} />
+
         {/* Catch-all: любой несуществующий путь */}
         <Route path="*" element={<NotFoundPage />} />
-
-        <Route path="about" element={<Placeholder title="About" />} />
       </Route>
     </Routes>
   )
