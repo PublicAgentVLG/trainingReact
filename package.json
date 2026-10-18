@@ -1,0 +1,19 @@
+{
+  "name": "trainingreact",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Синтетический тренировочный проект React + TypeScript (Заказы -> Позиции заказа)",
+  "workspaces": [
+    "client"
+  ],
+  "scripts": {
+    "server": "json-server --watch server/db.json --port 4000",
+    "client": "npm run dev --workspace client",
+    "dev": "concurrently -n server,client -c green,cyan \"npm run server\" \"npm run client\"",
+    "build": "npm run build --workspace client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "json-server": "^0.17.4"
+  }
+}

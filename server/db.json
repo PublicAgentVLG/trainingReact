@@ -1,0 +1,83 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "customer": "ООО «Ромашка»",
+      "createdAt": "2026-10-01",
+      "status": "paid",
+      "total": 12400
+    },
+    {
+      "id": 2,
+      "customer": "ИП Иванов А.А.",
+      "createdAt": "2026-10-03",
+      "status": "new",
+      "total": 5300
+    },
+    {
+      "id": 3,
+      "customer": "АО «Север»",
+      "createdAt": "2026-10-05",
+      "status": "shipped",
+      "total": 28900
+    },
+    {
+      "id": 4,
+      "customer": "ООО «Гео»",
+      "createdAt": "2026-10-09",
+      "status": "cancelled",
+      "total": 0
+    }
+  ],
+  "orderItems": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "product": "Клавиатура механическая",
+      "quantity": 2,
+      "price": 3200
+    },
+    {
+      "id": 2,
+      "orderId": 1,
+      "product": "Мышь беспроводная",
+      "quantity": 1,
+      "price": 1500
+    },
+    {
+      "id": 3,
+      "orderId": 1,
+      "product": "Коврик XL",
+      "quantity": 1,
+      "price": 4500
+    },
+    {
+      "id": 4,
+      "orderId": 2,
+      "product": "Монитор 24\"",
+      "quantity": 1,
+      "price": 5300
+    },
+    {
+      "id": 5,
+      "orderId": 3,
+      "product": "Ноутбук 14\"",
+      "quantity": 1,
+      "price": 25000
+    },
+    {
+      "id": 6,
+      "orderId": 3,
+      "product": "Сумка для ноутбука",
+      "quantity": 1,
+      "price": 3900
+    },
+    {
+      "id": 7,
+      "orderId": 4,
+      "product": "Веб-камера Full HD",
+      "quantity": 2,
+      "price": 2700
+    }
+  ]
+}

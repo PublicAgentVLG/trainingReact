@@ -1,0 +1,17 @@
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.app code {
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  background: rgba(127, 127, 127, 0.15);
+  font-size: 0.9em;
+}
+
+.hint {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
