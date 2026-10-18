@@ -1,0 +1,31 @@
+/* CSS Modules: имена классов локальны. В сборке станут уникальными (_card_1a2b3). */
+.page { padding: 0; }
+.title { margin: 0 0 0.25rem; }
+.subtitle { margin: 0 0 1.5rem; opacity: 0.7; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem;
+  border: 1px solid rgba(127, 127, 127, 0.25);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  user-select: none;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cardTitle { font-weight: 700; }
+.cardDesc { opacity: 0.75; font-size: 0.9rem; }
