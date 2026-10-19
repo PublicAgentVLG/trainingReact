@@ -20,7 +20,13 @@ export default function ReduxOrderItemsPage() {
   return (
     <section>
       <button onClick={() => navigate('/redux/orders')}>← К заказам</button>
-      <h2>Redux · Позиции заказа #{orderId}</h2>
+      <h2>
+        Redux · Позиции заказа #{orderId}{' '}
+        {isFetching && !isLoading && (
+          <span style={{ opacity: 0.6, fontSize: '0.8rem' }}>🔄 обновление…</span>
+        )}
+      </h2>
+
 
       {order && (
         <p>
