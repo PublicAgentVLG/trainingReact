@@ -21,9 +21,11 @@ export default function HooksPage() {
     const list = orders ?? []
     const q = query.trim().toLowerCase()
     const qStatus = queryStatus.trim().toLowerCase()
-    if (!q && !qStatus) return list
-
-    return list.filter((o) => o.customer.toLowerCase().includes(q))
+    return list.filter(
+        (o) =>
+          o.customer.toLowerCase().includes(q) &&
+          o.status.toLowerCase().includes(qStatus),
+      )
   }, [orders, query,queryStatus])
 
   if (loading) return <p>⏳ Загрузка заказов…</p>
@@ -39,7 +41,7 @@ export default function HooksPage() {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Поиск по клиенту…"
       />
-      <button aria-label='Test' onClick={(e) => setQuery("")}>Clean</button>
+      <button aria-label='Test' onClick={() => setQuery("")}>Clean</button>
       <input
         value={queryStatus}
         onChange={(e) => setQueryStatus(e.target.value)}
