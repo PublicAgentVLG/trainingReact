@@ -4,7 +4,7 @@
       "id": 1,
       "customer": "ООО «Ромашка»",
       "createdAt": "2026-10-01",
-      "status": "paid",
+      "status": "cancelled",
       "total": 12400
     },
     {
@@ -18,7 +18,7 @@
       "id": 3,
       "customer": "АО «Север»",
       "createdAt": "2026-10-05",
-      "status": "shipped",
+      "status": "new",
       "total": 28900
     },
     {
