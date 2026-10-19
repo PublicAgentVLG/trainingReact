@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 import ReduxOrdersPage from './features/redux/pages/OrdersPage'
 import ReduxOrderItemsPage from './features/redux/pages/OrderItemsPage'
+import HooksPage from './features/hooks-demo/HooksPage'
 
 export default function App() {
   return (
@@ -13,7 +14,8 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="styling" element={<Placeholder title="Этап 2 · CSS Modules / PostCSS" />} />
-        <Route path="hooks" element={<Placeholder title="Этап 3 · Хуки" />} />
+        {/*<Route path="hooks" element={<Placeholder title="Этап 3 · Хуки" />} />*/}
+        <Route path="hooks" element={<HooksPage />} />
 
         {/* Этап 4 — Redux + RTK Query */}
         <Route path="redux/orders" element={<ReduxOrdersPage />} />
